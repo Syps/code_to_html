@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="nick sypteras">
+  <meta name="author" content="nick sypteras">
+  <title>code to html!</title>
+
+  <link href="resources/style.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="google-code-prettify/prettify.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#input-form").submit(false);
+      $("#convert-button").click(function () {
+        $("#code-output").val(`<!-- Generated HTML Code Block -->\n<pre class="prettyprint">${PR.prettyPrintOne($("#code-input").val(), "py")}</pre>\n<!-- End Generated Code Block -->`)
+      });
+    });
+  </script>
+</head>
+
+<body style="background-color: bisque;">
+  <h2>Write python code here:</h2>
+  <div>
+    <form id="input-form" style="display: inline; margin-right: 50px">
+      <textarea id="code-input" rows="100" style="height:300px;width:300px" type="text" id="lname" name="lname" onkeydown="if(event.keyCode===9){var v=this.value,s=this.selectionStart,e=this.selectionEnd;this.value=v.substring(0, s)+'\t'+v.substring(e);this.selectionStart=this.selectionEnd=s+1;return false;}"></textarea>
+    </form>
+    <form style="display: inline">
+      <textarea id="code-output" rows="100" style="height:300px;width:300px" type="text" id="lname" name="lname"></textarea>
+    </form style="display: inline-block;">
+  </div>
+  <div id="convert-button" style="padding:10px;border: 1px solid black;width:50px;text-align: center;cursor:pointer">
+    <span>Convert</span>
+  </div>
+  <div </body>
+
+</html>
